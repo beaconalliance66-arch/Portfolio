@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beacon Alliance Web Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--gold:#D4AF37;
+--black:#080808;
+--dark:#111111;
+--white:#ffffff;
+--gray:#bdbdbd;
+--glass:rgba(255,255,255,.05);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--black);
+color:white;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+section{
+padding:120px 8%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+/* ===== Animated Background ===== */
+
+.bg-blur{
+position:fixed;
+width:500px;
+height:500px;
+background:var(--gold);
+filter:blur(250px);
+opacity:.12;
+border-radius:50%;
+z-index:-1;
+}
+
+.blur-1{
+top:-150px;
+left:-100px;
+}
+
+.blur-2{
+bottom:-200px;
+right:-100px;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(20px);
+background:rgba(0,0,0,.2);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:800;
+color:var(--gold);
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+color:white;
+font-size:.95rem;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+.nav-btn{
+background:var(--gold);
+padding:14px 24px;
+border-radius:50px;
+font-weight:600;
+color:black;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-badge{
+display:inline-block;
+padding:12px 20px;
+background:var(--glass);
+border:1px solid rgba(255,255,255,.1);
+border-radius:100px;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:4.5rem;
+line-height:1.05;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.gold{
+color:var(--gold);
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.9;
+color:var(--gray);
+margin-bottom:35px;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+}
+
+.primary-btn{
+background:var(--gold);
+color:black;
+padding:16px 28px;
+border-radius:50px;
+font-weight:700;
+}
+
+.secondary-btn{
+border:1px solid rgba(255,255,255,.15);
+padding:16px 28px;
+border-radius:50px;
+color:white;
+}
+
+/* ===== Hero Cards ===== */
+
+.hero-right{
+position:relative;
+height:600px;
+}
+
+.glass-card{
+position:absolute;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:30px;
+padding:30px;
+}
+
+.card-1{
+width:320px;
+top:30px;
+left:20px;
+}
+
+.card-2{
+width:260px;
+right:20px;
+top:180px;
+}
+
+.card-3{
+width:300px;
+bottom:30px;
+left:80px;
+}
+
+.card-title{
+font-size:1.2rem;
+font-weight:700;
+margin-bottom:10px;
+color:var(--gold);
+}
+
+.card-text{
+color:#d7d7d7;
+line-height:1.7;
+}
+
+/* ===== Stats ===== */
+
+.stats{
+display:flex;
+gap:40px;
+margin-top:50px;
+}
+
+.stat h2{
+font-size:2rem;
+color:var(--gold);
+}
+
+.stat p{
+font-size:.9rem;
+margin-top:5px;
+}
+
+/* ===== Mobile ===== */
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero-right{
+display:none;
+}
+
+.nav-links{
+display:none;
+}
+
+.stats{
+flex-wrap:wrap;
+}
+
+}
+  .section-header{
+text-align:center;
+max-width:800px;
+margin:auto;
+margin-bottom:70px;
+}
+
+.section-tag{
+display:inline-block;
+padding:10px 18px;
+border-radius:50px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+color:var(--gold);
+margin-bottom:20px;
+font-size:.85rem;
+font-weight:600;
+}
+
+.section-header h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.section-header p{
+color:var(--gray);
+line-height:1.8;
+}
+
+.services-grid,
+.benefits-grid,
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.service-card,
+.benefit-card,
+.portfolio-card{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+padding:35px;
+border-radius:25px;
+transition:.4s;
+}
+
+.service-card:hover,
+.benefit-card:hover,
+.portfolio-card:hover{
+transform:translateY(-10px);
+border-color:rgba(212,175,55,.3);
+}
+
+.service-icon{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.service-card h3,
+.benefit-card h3{
+margin-bottom:15px;
+}
+
+.service-card p,
+.benefit-card p{
+color:var(--gray);
+line-height:1.8;
+}
+
+.timeline{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.timeline-item{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.number{
+font-size:2rem;
+font-weight:800;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.mockup-screen{
+height:220px;
+border-radius:20px;
+background:linear-gradient(
+135deg,
+#222,
+#111
+);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+color:var(--gold);
+margin-bottom:25px;
+}
+
+.portfolio-content p{
+color:var(--gray);
+margin-top:10px;
+line-height:1.7;
+}
+  
+  .pricing-grid,
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.price-card{
+position:relative;
+background:rgba(255,255,255,.04);
+padding:40px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.featured{
+border:2px solid var(--gold);
+transform:scale(1.05);
+}
+
+.popular-badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:var(--gold);
+color:black;
+padding:8px 18px;
+border-radius:50px;
+font-size:.8rem;
+font-weight:700;
+}
+
+.price{
+font-size:3rem;
+font-weight:800;
+color:var(--gold);
+margin:20px 0;
+}
+
+.price-card ul{
+list-style:none;
+margin:25px 0;
+}
+
+.price-card li{
+padding:10px 0;
+color:var(--gray);
+}
+
+.price-btn{
+display:inline-block;
+background:var(--gold);
+color:black;
+padding:14px 26px;
+border-radius:50px;
+font-weight:700;
+}
+
+.testimonial-card{
+background:rgba(255,255,255,.04);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+line-height:1.8;
+}
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+.faq{
+background:rgba(255,255,255,.04);
+padding:30px;
+margin-bottom:20px;
+border-radius:20px;
+}
+
+.faq p{
+margin-top:15px;
+color:var(--gray);
+}
+
+.contact-box{
+background:rgba(255,255,255,.04);
+padding:60px;
+border-radius:35px;
+text-align:center;
+}
+
+.contact-box h2{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.contact-box p{
+color:var(--gray);
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:700px;
+margin:40px auto;
+}
+
+input,
+textarea{
+padding:18px;
+background:#161616;
+border:none;
+border-radius:15px;
+color:white;
+}
+
+textarea{
+height:160px;
+resize:none;
+}
+
+button{
+background:var(--gold);
+border:none;
+padding:18px;
+font-weight:700;
+border-radius:15px;
+cursor:pointer;
+}
+
+.contact-info{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+footer{
+padding:70px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:30px;
+margin:25px 0;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:white;
+}
+
+.copyright{
+color:var(--gray);
+}
+
+.whatsapp-float{
+position:fixed;
+right:25px;
+bottom:25px;
+width:60px;
+height:60px;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:1.5rem;
+text-decoration:none;
+z-index:999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-blur blur-1"></div>
+<div class="bg-blur blur-2"></div>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+Beacon Alliance
+</div>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a href="https://wa.me/2349130284264" class="nav-btn">
+Let's Talk
+</a>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="hero-badge">
+Premium Website Solutions For Businesses
+</div>
+
+<h1>
+Websites That
+<span class="gold">Convert Visitors</span>
+Into Customers
+</h1>
+
+<p>
+We help hospitals, consultants, driving schools, cleaning companies and service businesses establish a powerful online presence that builds trust, attracts leads and increases revenue.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="primary-btn">
+Book Free Consultation
+</a>
+
+<a href="#portfolio" class="secondary-btn">
+View Projects
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>100%</h2>
+<p>Mobile Friendly</p>
+</div>
+
+<div class="stat">
+<h2>SEO</h2>
+<p>Optimized</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Lead Generation</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="glass-card card-1">
+<div class="card-title">
+Hospital Website
+</div>
+<div class="card-text">
+Online appointments, doctor profiles and patient portals.
+</div>
+</div>
+
+<div class="glass-card card-2">
+<div class="card-title">
+Driving School
+</div>
+<div class="card-text">
+Increase registrations with modern enrollment systems.
+</div>
+</div>
+
+<div class="glass-card card-3">
+<div class="card-title">
+Business Websites
+</div>
+<div class="card-text">
+Build credibility and generate quality leads consistently.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
+  <!-- ========================= -->
+<!-- SERVICES SECTION -->
+<!-- ========================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+WHAT WE DO
+</span>
+
+<h2>
+Website Solutions Designed To Grow Businesses
+</h2>
+
+<p>
+We don't just build websites. We create digital assets that help businesses attract leads, build trust and increase revenue.
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-icon">🏥</div>
+
+<h3>Hospital Websites</h3>
+
+<p>
+Appointment booking systems, doctor profiles, patient information portals and modern healthcare experiences.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">🚗</div>
+
+<h3>Driving School Websites</h3>
+
+<p>
+Online registration, course management and inquiry systems designed to increase enrollments.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">🧹</div>
+
+<h3>Cleaning Company Websites</h3>
+
+<p>
+Convert visitors into quote requests and paying customers with high-converting service pages.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">💼</div>
+
+<h3>Consultant Websites</h3>
+
+<p>
+Professional personal brands that establish authority and generate premium leads.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">🏢</div>
+
+<h3>Corporate Websites</h3>
+
+<p>
+Build credibility and showcase your business professionally to potential customers.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">🚀</div>
+
+<h3>Landing Pages</h3>
+
+<p>
+Focused pages built specifically to generate leads, bookings and sales.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- WHY CHOOSE US -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+WHY US
+</span>
+
+<h2>
+Built For Results, Not Just Looks
+</h2>
+
+</div>
+
+<div class="benefits-grid">
+
+<div class="benefit-card">
+<h3>⚡ Lightning Fast</h3>
+<p>
+Optimized for speed to improve user experience and conversions.
+</p>
+</div>
+
+<div class="benefit-card">
+<h3>📱 Mobile First</h3>
+<p>
+Your website will look perfect across phones, tablets and desktops.
+</p>
+</div>
+
+<div class="benefit-card">
+<h3>🔍 SEO Ready</h3>
+<p>
+Structured to help customers discover your business online.
+</p>
+</div>
+
+<div class="benefit-card">
+<h3>🎯 Conversion Focused</h3>
+<p>
+Every section is strategically designed to generate inquiries.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PROCESS SECTION -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+OUR PROCESS
+</span>
+
+<h2>
+Simple Process. Powerful Results.
+</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="number">01</div>
+<h3>Discovery</h3>
+<p>Understanding your business goals and customers.</p>
+</div>
+
+<div class="timeline-item">
+<div class="number">02</div>
+<h3>Strategy</h3>
+<p>Planning the structure and user experience.</p>
+</div>
+
+<div class="timeline-item">
+<div class="number">03</div>
+<h3>Design</h3>
+<p>Creating premium visuals that reflect your brand.</p>
+</div>
+
+<div class="timeline-item">
+<div class="number">04</div>
+<h3>Development</h3>
+<p>Building a fast, secure and responsive website.</p>
+</div>
+
+<div class="timeline-item">
+<div class="number">05</div>
+<h3>Launch</h3>
+<p>Deploying your website and making it live.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PORTFOLIO SECTION -->
+<!-- ========================= -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+PORTFOLIO
+</span>
+
+<h2>
+Selected Concepts & Projects
+</h2>
+
+<p>
+Designed to demonstrate what your business could look like online.
+</p>
+
+</div>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+
+<div class="mockup-screen">
+Hospital Website Concept
+</div>
+
+<div class="portfolio-content">
+<h3>Modern Hospital</h3>
+<p>
+Online appointments, doctor directories and patient resources.
+</p>
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<div class="mockup-screen">
+Driving School Concept
+</div>
+
+<div class="portfolio-content">
+<h3>Driving School</h3>
+<p>
+Built to maximize registrations and student inquiries.
+</p>
+</div>
+
+</div>
+
+<div class="portfolio-card">
+
+<div class="mockup-screen">
+Cleaning Company Concept
+</div>
+
+<div class="portfolio-content">
+<h3>Cleaning Service</h3>
+<p>
+Focused on generating quote requests and bookings.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
+  <!-- ========================= -->
+<!-- PRICING -->
+<!-- ========================= -->
+
+<section id="pricing">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+PRICING
+</span>
+
+<h2>
+Flexible Pricing For Every Business
+</h2>
+
+<p>
+Transparent pricing designed to fit businesses at different stages.
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Starter</h3>
+
+<div class="price">
+₦150k+
+</div>
+
+<ul>
+<li>5 Page Website</li>
+<li>Mobile Responsive</li>
+<li>Contact Form</li>
+<li>Basic SEO</li>
+<li>1 Revision</li>
+</ul>
+
+<a href="#contact" class="price-btn">
+Get Started
+</a>
+
+</div>
+
+<div class="price-card featured">
+
+<div class="popular-badge">
+MOST POPULAR
+</div>
+
+<h3>Business</h3>
+
+<div class="price">
+₦250k+
+</div>
+
+<ul>
+<li>10+ Pages</li>
+<li>Premium Design</li>
+<li>Advanced SEO</li>
+<li>Lead Generation Setup</li>
+<li>WhatsApp Integration</li>
+<li>3 Revisions</li>
+</ul>
+
+<a href="#contact" class="price-btn">
+Get Started
+</a>
+
+</div>
+
+<div class="price-card">
+
+<h3>Premium</h3>
+
+<div class="price">
+₦500k+
+</div>
+
+<ul>
+<li>Custom Development</li>
+<li>Advanced Features</li>
+<li>Booking Systems</li>
+<li>Custom Integrations</li>
+<li>Priority Support</li>
+<li>Unlimited Revisions</li>
+</ul>
+
+<a href="#contact" class="price-btn">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TESTIMONIALS -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+CASE STUDIES
+</span>
+
+<h2>
+Concept Projects Built For Businesses
+</h2>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<p>
+"Hospital website concept designed with online appointments and patient engagement in mind."
+</p>
+</div>
+
+<div class="testimonial-card">
+<p>
+"Driving school concept optimized for student registrations and inquiries."
+</p>
+</div>
+
+<div class="testimonial-card">
+<p>
+"Cleaning company website focused on generating quote requests and leads."
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FAQ -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-tag">
+FAQ
+</span>
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+</div>
+
+<div class="faq-container">
+
+<div class="faq">
+<h3>How long does a website take?</h3>
+<p>Most projects are completed within 1–3 weeks.</p>
+</div>
+
+<div class="faq">
+<h3>Do you provide hosting?</h3>
+<p>Yes, hosting and maintenance can be included.</p>
+</div>
+
+<div class="faq">
+<h3>Can you redesign my current website?</h3>
+<p>Absolutely. We can modernize and improve your existing website.</p>
+</div>
+
+<div class="faq">
+<h3>Will my website work on phones?</h3>
+<p>Every website is fully responsive and mobile-friendly.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>
+Ready To Grow Your Business Online?
+</h2>
+
+<p>
+Let's discuss your project and build something exceptional.
+</p>
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Your Email"
+required>
+
+<textarea
+placeholder="Tell us about your project"
+required>
+</textarea>
+
+<button type="submit">
+Book Free Consultation
+</button>
+
+</form>
+
+<div class="contact-info">
+
+<p>
+📧 beaconalliance66@gmail.com
+</p>
+
+<p>
+📍 Lagos, Nigeria
+</p>
+
+<p>
+📱 +2349130284264
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div class="container">
+
+<h3>
+Beacon Alliance Web Solutions
+</h3>
+
+<p>
+Helping businesses attract more customers through premium web design.
+</p>
+
+<div class="footer-links">
+
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<p class="copyright">
+© 2026 Beacon Alliance Web Solutions. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+<!-- WhatsApp Button -->
+
+<a
+href="https://wa.me/2349130284264"
+class="whatsapp-float"
+target="_blank">
+
+💬
+
+</a>
+  
+  <script>
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".service-card,.benefit-card,.portfolio-card,.price-card,.testimonial-card").forEach(card=>{
+
+const position = card.getBoundingClientRect().top;
+
+if(position < window.innerHeight - 100){
+
+card.style.opacity = "1";
+card.style.transform = "translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(
+".service-card,.benefit-card,.portfolio-card,.price-card,.testimonial-card"
+).forEach(card=>{
+
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition=".7s";
+
+});
+
+</script>
+  
+  
+  </body>
